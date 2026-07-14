@@ -10,7 +10,7 @@ export default function Problem() {
           <div key={num} className="flex gap-4">
             <span
               className="font-[family-name:var(--font-bebas)] text-4xl leading-none shrink-0"
-              style={{ color: "#2E333D" }}
+              style={{ color: "rgba(244,112,15,0.25)" }}
               aria-hidden="true"
             >
               {num}
