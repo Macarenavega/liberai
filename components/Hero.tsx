@@ -23,10 +23,11 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Isometric buildings — desktop decoration */}
+      {/* Isometric buildings — visible on all screens, repositioned per breakpoint */}
       <div
-        className="absolute right-16 top-20 hidden lg:block pointer-events-none"
-        style={{ width: "40%", maxWidth: "460px", opacity: 0.82 }}
+        className="absolute pointer-events-none
+          left-1/2 -translate-x-1/2 top-20 w-[78vw] max-w-[300px] opacity-[0.62]
+          lg:left-auto lg:translate-x-0 lg:right-16 lg:top-20 lg:w-[40%] lg:max-w-[460px] lg:opacity-[0.82]"
         aria-hidden="true"
       >
         <svg viewBox="80 30 410 250" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
@@ -69,11 +70,21 @@ export default function Hero() {
           style={{
             fontSize: "clamp(3.5rem, 10vw, 9rem)",
             color: "#fff",
-            maxWidth: "16ch",
+            maxWidth: "20ch",
           }}
         >
           Tu empresa hace<br />
           el trabajo pesado.
+          <span
+            style={{
+              color: "var(--safety)",
+              fontSize: "clamp(2.2rem, 6vw, 6rem)",
+              display: "block",
+              marginTop: "0.12em",
+            }}
+          >
+            Nosotros te lo facilitamos.
+          </span>
         </h1>
 
         <div className="flex flex-col sm:flex-row sm:items-end gap-8 sm:gap-16">
