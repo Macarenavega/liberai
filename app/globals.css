@@ -61,3 +61,35 @@ h1, h2, h3, h4 {
 @media (prefers-reduced-motion: reduce) {
   * { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+@keyframes iso-float-a {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+@keyframes iso-float-b {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-14px); }
+}
+@keyframes iso-float-c {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-9px); }
+}
+
+.iso-a {
+  animation: iso-float-a 4s ease-in-out infinite;
+  animation-delay: -0.5s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.iso-b {
+  animation: iso-float-b 5.5s ease-in-out infinite;
+  animation-delay: -2.2s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.iso-c {
+  animation: iso-float-c 3.8s ease-in-out infinite;
+  animation-delay: -1.3s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
