@@ -4,32 +4,25 @@ export default function Contact() {
   return (
     <section
       id="contacto"
-      className="py-24 px-6 relative overflow-hidden"
-      style={{ background: "var(--steel)" }}
+      className="py-24 sm:py-40 px-4 sm:px-6"
+      style={{ background: "var(--deep-teal)" }}
     >
-      <div className="absolute top-0 right-0 w-1.5 h-full" style={{ background: "var(--safety)" }} aria-hidden="true" />
-
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-end justify-between gap-10">
-        <div>
-          <p className="text-xs font-semibold tracking-[0.14em] uppercase mb-4" style={{ color: "var(--safety)" }}>
-            Contacto
-          </p>
-          <h2
-            className="font-[family-name:var(--font-bebas)] leading-none mb-6"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)", color: "#fff" }}
-          >
-            ¿Tu empresa de obras<br />necesita alguna de estas cosas?
-          </h2>
-          <p className="text-base leading-relaxed max-w-lg" style={{ color: "var(--smoke)" }}>
-            Cuéntame qué proceso te está robando tiempo. Sin formularios largos, sin demo de 45 minutos.
-          </p>
-        </div>
-        <div className="flex flex-col sm:flex-row gap-4 shrink-0">
-          <Btn href="https://wa.me/34603449845" large>
-            WhatsApp →
+      <div className="max-w-[1200px] mx-auto text-center flex flex-col items-center">
+        <p className="badge mb-8 text-white" style={{ background: "var(--slate-teal)" }}>
+          Contacto
+        </p>
+        <h2 className="t-display text-white mb-8 max-w-[18ch]">
+          ¿Tu empresa de obras necesita <span className="italic">alguna de estas cosas?</span>
+        </h2>
+        <p className="t-body max-w-lg mb-12" style={{ color: "var(--paper-muted)" }}>
+          Cuéntame qué proceso te está robando tiempo. Sin formularios largos, sin demo de 45 minutos.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <Btn href="https://wa.me/34603449845" variant="light" large>
+            WhatsApp <span aria-hidden="true">→</span>
           </Btn>
-          <Btn href="mailto:hola@liberai.es" large>
-            hola@liberai.es →
+          <Btn href="mailto:hola@liberai.es" variant="outline-light" large>
+            hola@liberai.es <span aria-hidden="true">→</span>
           </Btn>
         </div>
       </div>

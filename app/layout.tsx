@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, DM_Sans } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-bebas",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
+// Sustituto libre de ES Allianz: serif de alto contraste, legible también a tamaño cuerpo.
+const serif = Playfair_Display({
+  subsets: ["latin", "latin-ext"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
   display: "swap",
 });
 
@@ -40,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${bebasNeue.variable} ${dmSans.variable}`}>
+    <html lang="es" className={serif.variable}>
       <body>{children}</body>
     </html>
   );
