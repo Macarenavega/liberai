@@ -39,42 +39,35 @@ const tools = [
 
 export default function Showcase() {
   return (
-    <section id="herramientas" className="py-24 px-6" style={{ background: "var(--chalk)" }}>
-      <div className="max-w-6xl mx-auto">
-        <p className="text-xs font-semibold tracking-[0.14em] uppercase mb-4" style={{ color: "var(--safety)" }}>
-          Herramientas
-        </p>
-        <h2
-          className="font-[family-name:var(--font-bebas)] mb-16"
-          style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "var(--steel)" }}
-        >
-          Mejoras concretas para tu empresa.
-        </h2>
+    <section id="herramientas" className="py-20 sm:py-28 px-4 sm:px-6 border-t border-[#e5e5e5]">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="text-center mb-16 sm:mb-24">
+          <p className="pill mb-6"><span aria-hidden="true">✦</span> Herramientas</p>
+          <h2 className="t-heading-lg">
+            <span className="block text-[#040101]">Mejoras concretas</span>
+            <span className="block text-[#f53900]">para tu empresa.</span>
+          </h2>
+        </div>
 
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-20 sm:gap-28">
           {tools.map((t, i) => (
             <div
               key={t.label}
-              className={`grid lg:grid-cols-2 gap-10 lg:gap-16 items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
+              className={`grid grid-cols-1 lg:grid-cols-2 [&>*]:min-w-0 gap-10 lg:gap-20 items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}
             >
-              {/* Text */}
+              {/* Texto */}
               <div>
-                <p className="text-xs font-semibold tracking-[0.12em] uppercase mb-3" style={{ color: "var(--safety)" }}>
-                  {t.label}
+                <p className="t-body-sm font-medium text-[#f53900] mb-3">
+                  {String(i + 1).padStart(2, "0")} · {t.label}
                 </p>
-                <h3
-                  className="font-[family-name:var(--font-bebas)] mb-4 leading-none"
-                  style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "var(--steel)" }}
-                >
-                  {t.title}
-                </h3>
-                <p className="text-base leading-relaxed" style={{ color: "var(--graphite)" }}>
-                  {t.desc}
-                </p>
+                <h3 className="t-heading text-[#040101] mb-4 max-w-[18ch]">{t.title}</h3>
+                <p className="t-body text-[#827e7e] max-w-[42ch]">{t.desc}</p>
               </div>
 
               {/* Mockup */}
-              <div>{t.mockup}</div>
+              <div className="rounded-[12px] border border-[#e5e5e5] p-4 sm:p-8 overflow-x-auto" style={{ boxShadow: "var(--shadow-subtle)" }}>
+                {t.mockup}
+              </div>
             </div>
           ))}
         </div>

@@ -43,101 +43,88 @@ const plans = [
   },
 ];
 
+const tags = [
+  "Dominio incluido",
+  "Hosting incluido",
+  "Copias de seguridad",
+  "Tu logo y colores",
+  "Lectura de tickets con IA",
+  "Soporte directo",
+];
+
 export default function Pricing() {
   return (
-    <section id="precios" className="py-24 px-6" style={{ background: "var(--steel)" }}>
-      <div className="max-w-6xl mx-auto">
-        <p className="text-xs font-semibold tracking-[0.14em] uppercase mb-4" style={{ color: "var(--safety)" }}>
-          Precios
-        </p>
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
-          <h2
-            className="font-[family-name:var(--font-bebas)] leading-none"
-            style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", color: "#fff" }}
-          >
-            Precio cerrado.<br />Sin sorpresas.
+    <section id="precios" className="py-20 sm:py-28 px-4 sm:px-6 border-t border-[#e5e5e5]">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="text-center mb-8">
+          <p className="pill mb-6"><span aria-hidden="true">✦</span> Precios</p>
+          <h2 className="t-heading-lg">
+            <span className="block text-[#040101]">Precio cerrado.</span>
+            <span className="block text-[#f53900]">Sin sorpresas.</span>
           </h2>
-          <p className="text-sm max-w-sm leading-relaxed" style={{ color: "var(--smoke)" }}>
-            La cuota mensual cubre todo lo que necesita la herramienta para funcionar: el servidor donde vive, la dirección web, las copias de seguridad automáticas y el sistema que lee las fotos de los tickets. Tú no contratas nada, no recibes facturas de terceros, no tienes que configurar nada. Lo gestionamos nosotros.
-          </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-px" style={{ background: "#2E333D" }}>
-          {plans.map((p) => (
-            <div
-              key={p.name}
-              className="flex flex-col p-8 gap-6"
-              style={{
-                background: p.highlight ? "#252930" : "#1C1F26",
-                borderTop: p.highlight ? `3px solid var(--safety)` : "3px solid transparent",
-              }}
-            >
-              <div>
-                <div className="flex items-center gap-2 mb-1">
-                  <p
-                    className="font-[family-name:var(--font-bebas)] text-xl"
-                    style={{ color: p.highlight ? "var(--safety)" : "var(--smoke)", letterSpacing: "0.05em" }}
-                  >
-                    {p.name}
-                  </p>
-                  {"originalSetup" in p && (
-                    <span
-                      className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm"
-                      style={{ background: "var(--safety)", color: "#fff" }}
-                    >
-                      Oferta
-                    </span>
-                  )}
-                </div>
-                <p className="text-sm leading-relaxed" style={{ color: "var(--smoke)" }}>{p.desc}</p>
-              </div>
+        <p className="t-body text-[#827e7e] max-w-2xl mx-auto text-center mb-8">
+          La cuota mensual cubre todo lo que necesita la herramienta para funcionar: el servidor donde vive, la dirección web, las copias de seguridad automáticas y el sistema que lee las fotos de los tickets. Tú no contratas nada, no recibes facturas de terceros, no tienes que configurar nada. Lo gestionamos nosotros.
+        </p>
 
-              <div>
-                <div className="flex items-baseline gap-2 mb-1">
-                  <span
-                    className="font-[family-name:var(--font-bebas)] leading-none"
-                    style={{ fontSize: "3rem", color: "#fff" }}
-                  >
-                    {p.setup} €
-                  </span>
-                  {"originalSetup" in p && (
-                    <span
-                      className="text-lg line-through"
-                      style={{ color: "var(--smoke)" }}
-                    >
-                      {(p as typeof p & { originalSetup: string }).originalSetup} €
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs" style={{ color: "var(--smoke)" }}>
-                  pago único · puesta en marcha{"originalSetup" in p ? " · por tiempo limitado" : ""}
-                </p>
-
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-2xl font-bold" style={{ color: "var(--safety)" }}>
-                    {p.monthly} €
-                  </span>
-                  <span className="text-xs" style={{ color: "var(--smoke)" }}>/mes · todo incluido</span>
-                </div>
-              </div>
-
-              <ul className="flex flex-col gap-2.5 flex-1">
-                {p.includes.map((item) => (
-                  <li key={item} className="flex gap-2.5 text-sm" style={{ color: "var(--concrete)" }}>
-                    <span style={{ color: "var(--safety)", flexShrink: 0 }}>→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <Btn href="#contacto">
-                Empezamos →
-              </Btn>
-            </div>
+        <ul className="flex flex-wrap justify-center gap-2 mb-14" aria-label="Incluido en todos los planes">
+          {tags.map((t) => (
+            <li key={t} className="pill !py-1.5 !px-3.5">{t}</li>
           ))}
+        </ul>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {plans.map((p) => {
+            const hl = Boolean(p.highlight);
+            return (
+              <div
+                key={p.name}
+                className="flex flex-col p-8 sm:p-10 gap-8 rounded-[8px] border bg-[#fffafa]"
+                style={{
+                  borderColor: hl ? "var(--ember)" : "var(--ash)",
+                  boxShadow: hl ? "var(--shadow-subtle)" : "none",
+                }}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <h3 className="t-heading-sm text-[#040101]">{p.name}</h3>
+                    <span className="pill !py-1 !px-3 !text-xs">{hl ? "Recomendado" : "Oferta"}</span>
+                  </div>
+                  <p className="t-body-sm text-[#827e7e]">{p.desc}</p>
+                </div>
+
+                <div>
+                  <div className="flex items-baseline gap-3 mb-1">
+                    <span className="text-5xl font-bold tracking-[-0.03em] text-[#040101]">{p.setup} €</span>
+                    <span className="t-subheading line-through text-[#827e7e]">{p.originalSetup} €</span>
+                  </div>
+                  <p className="t-caption text-[#4d4b4b]">pago único · puesta en marcha · por tiempo limitado</p>
+
+                  <div className="mt-5 pt-5 border-t border-[#e5e5e5] flex items-baseline gap-2">
+                    <span className="text-2xl font-semibold text-[#f53900]">{p.monthly} €</span>
+                    <span className="t-caption text-[#4d4b4b]">/mes · todo incluido</span>
+                  </div>
+                </div>
+
+                <ul className="flex flex-col gap-3 flex-1">
+                  {p.includes.map((item) => (
+                    <li key={item} className="flex gap-3 t-body-sm text-[#040101]">
+                      <span aria-hidden="true" className="text-[#f53900]">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <Btn href="#contacto" variant={hl ? "primary" : "ghost"}>
+                  Empezamos <span aria-hidden="true">→</span>
+                </Btn>
+              </div>
+            );
+          })}
         </div>
 
-        <p className="mt-6 text-xs text-center" style={{ color: "var(--smoke)" }}>
+        <p className="mt-10 t-body-sm text-center text-[#827e7e]">
           ¿Necesitas algo diferente? Hablemos — muchos proyectos no encajan exactamente en ninguna de estas opciones.
         </p>
       </div>

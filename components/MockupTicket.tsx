@@ -1,15 +1,15 @@
 export default function MockupTicket() {
   return (
-    <div className="rounded-sm overflow-hidden shadow-2xl" style={{ background: "#1C1F26", fontFamily: "var(--font-dm-sans), sans-serif" }}>
+    <div className="rounded-lg overflow-hidden border border-[#e5e5e5]" style={{ background: "#1a1616", fontFamily: "inherit", letterSpacing: "normal" }}>
       {/* Phone header */}
-      <div className="px-4 pt-4 pb-3" style={{ borderBottom: "1px solid #2E333D" }}>
-        <div className="text-[10px] font-semibold uppercase tracking-widest mb-1" style={{ color: "#F4700F" }}>Captura de gasto</div>
+      <div className="px-4 pt-4 pb-3" style={{ borderBottom: "1px solid #2e2a2a" }}>
+        <div className="text-[10px] font-semibold uppercase tracking-widest mb-1" style={{ color: "#f53900" }}>Captura de gasto</div>
         <div className="text-sm font-semibold" style={{ color: "#fff" }}>Foto del ticket → datos extraídos</div>
       </div>
 
       <div className="grid grid-cols-2" style={{ minHeight: "220px" }}>
         {/* Left: fake ticket photo */}
-        <div className="p-3 flex items-center justify-center" style={{ background: "#16181f", borderRight: "1px solid #2E333D" }}>
+        <div className="p-3 flex items-center justify-center" style={{ background: "#120f0f", borderRight: "1px solid #2e2a2a" }}>
           <div className="w-full rounded-sm p-3 text-[9px]" style={{ background: "#fff", color: "#333", lineHeight: "1.6", fontFamily: "monospace" }}>
             <div className="text-center font-bold mb-1" style={{ fontSize: "8px" }}>FERRETERÍA INDUSTRIAL</div>
             <div className="text-center mb-2" style={{ color: "#999", fontSize: "7px" }}>C/ Aragó 302 · Barcelona</div>
@@ -35,14 +35,14 @@ export default function MockupTicket() {
             { label: "Categoría", value: "Material obra" },
           ].map(({ label, value }) => (
             <div key={label}>
-              <div style={{ color: "#9AA0AB", fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</div>
+              <div style={{ color: "#827e7e", fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.06em" }}>{label}</div>
               <div className="text-xs font-semibold" style={{ color: "#fff" }}>{value}</div>
             </div>
           ))}
 
-          <div className="mt-auto pt-2 flex items-center gap-1.5" style={{ borderTop: "1px solid #2E333D" }}>
-            <div className="w-2 h-2 rounded-full" style={{ background: "#22c55e" }} />
-            <span style={{ color: "#22c55e", fontSize: "9px", fontWeight: 600 }}>Datos extraídos con IA</span>
+          <div className="mt-auto pt-2 flex items-center gap-1.5" style={{ borderTop: "1px solid #2e2a2a" }}>
+            <div className="w-2 h-2 rounded-full" style={{ background: "#ffe0d6" }} />
+            <span style={{ color: "#ffe0d6", fontSize: "9px", fontWeight: 600 }}>Datos extraídos con IA</span>
           </div>
         </div>
       </div>
