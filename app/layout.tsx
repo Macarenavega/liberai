@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Playfair_Display } from "next/font/google";
+import { Bebas_Neue, Geist } from "next/font/google";
 import "./globals.css";
 
-// Sustituto libre de ES Allianz: serif de alto contraste, legible también a tamaño cuerpo.
-const serif = Playfair_Display({
+const geist = Geist({
   subsets: ["latin", "latin-ext"],
-  style: ["normal", "italic"],
-  variable: "--font-serif",
+  variable: "--font-geist",
+  display: "swap",
+});
+
+// Fuente exclusiva del logotipo LiberAI.
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas",
   display: "swap",
 });
 
@@ -35,7 +41,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={serif.variable}>
+    <html lang="es" className={`${geist.variable} ${bebasNeue.variable}`}>
       <body>{children}</body>
     </html>
   );

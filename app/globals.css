@@ -1,78 +1,71 @@
 @import "tailwindcss";
 
 :root {
-  /* Colores — sistema editorial */
-  --obsidian:     #000000;
-  --paper:        #ffffff;
-  --deep-teal:    #0b252a;
-  --bone:         #f6f5f5;
-  --sandstone:    #f5ece5;
-  --ash-blush:    #ede2d7;
-  --stone:        #d7cecc;
-  --iron:         #e1dad9;
-  --pewter:       #afaeae;
-  --charcoal:     #222222;
-  --dusty-sky:    #c5d5e8;
-  --mist-mint:    #d4e6eb;
-  --wisteria:     #efe5f9;
-  --desert-clay:  #e7d3bf;
-  --slate-teal:   #406e7a;
-  --saddle-brown: #4c312b;
+  /* Colores — un solo acento naranja sobre blanco nieve */
+  --ember:  #f53900;
+  --peach:  #ffe0d6;
+  --snow:   #fffafa;
+  --ink:    #040101;
+  --fog:    #827e7e;
+  --smoke:  #4d4b4b;
+  --ash:    #e5e5e5;
+  --pebble: #c0bcbc;
 
-  /* Texto secundario */
-  --ink-muted:    #4a4545;           /* sobre claro — contraste AA */
-  --paper-muted:  rgba(255,255,255,0.72); /* sobre deep teal — contraste AA */
-  --teal-line:    rgba(255,255,255,0.14);
+  --shadow-subtle: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
 
-  --bg:     var(--paper);
-  --fg:     var(--obsidian);
-  --muted:  var(--ink-muted);
-  --border: var(--iron);
+  --bg: var(--snow);
+  --fg: var(--ink);
 }
 
 @theme inline {
   --color-background: var(--bg);
   --color-foreground: var(--fg);
+  --color-ember: var(--ember);
+  --color-peach: var(--peach);
+  --color-snow: var(--snow);
+  --color-ink: var(--ink);
+  --color-fog: var(--fog);
+  --color-smoke: var(--smoke);
+  --color-ash: var(--ash);
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 112px; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
 
 body {
   background: var(--bg);
   color: var(--fg);
-  font-family: var(--font-serif), "Playfair Display", Georgia, serif;
-  font-size: 18px;
+  font-family: var(--font-geist), "Geist", Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
   line-height: 1.4;
-  letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4 {
   font-family: inherit;
-  font-weight: 400;
   text-wrap: balance;
 }
 
 /* Escala tipográfica */
-.t-display-xl { font-size: clamp(3.25rem, 11vw, 9.5rem); line-height: 0.85; letter-spacing: -0.045em; }
-.t-display    { font-size: clamp(2.75rem, 7vw, 4.625rem); line-height: 1;    letter-spacing: -0.045em; }
-.t-heading-lg { font-size: clamp(2.5rem, 5.5vw, 4rem);    line-height: 1.05; letter-spacing: -0.04em; }
-.t-heading    { font-size: clamp(2rem, 4vw, 2.875rem);    line-height: 1.1;  letter-spacing: -0.04em; }
-.t-heading-sm { font-size: 1.75rem;  line-height: 1.2; letter-spacing: -0.02em; }
-.t-subheading { font-size: 1.1875rem; line-height: 1.3; letter-spacing: -0.02em; }
-.t-body       { font-size: 1.125rem; line-height: 1.4; letter-spacing: -0.02em; }
-.t-body-sm    { font-size: 1rem;     line-height: 1.4; letter-spacing: -0.02em; }
-.t-caption    { font-size: 0.875rem; line-height: 1.2; letter-spacing: -0.02em; }
+.t-display    { font-size: clamp(2.75rem, 7vw, 5rem);  line-height: 1;    font-weight: 600; letter-spacing: -0.03em; }
+.t-heading-lg { font-size: clamp(2rem, 4.5vw, 3rem);   line-height: 1.11; font-weight: 500; letter-spacing: -0.02em; }
+.t-heading    { font-size: clamp(1.625rem, 3vw, 2rem); line-height: 1.25; font-weight: 600; letter-spacing: -0.01em; }
+.t-heading-sm { font-size: 1.5rem;   line-height: 1.25; font-weight: 600; }
+.t-subheading { font-size: 1.25rem;  line-height: 1.33; }
+.t-body       { font-size: 1rem;     line-height: 1.4; }
+.t-body-sm    { font-size: 0.875rem; line-height: 1.4; }
+.t-caption    { font-size: 0.75rem;  line-height: 1.4; }
 
-/* Etiqueta tipo badge */
-.badge {
+/* Badge tipo píldora */
+.pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  border-radius: 8px;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  background: var(--peach);
+  color: var(--ember);
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.2;

@@ -1,23 +1,22 @@
 interface BtnProps {
   href: string;
   children: React.ReactNode;
-  /** "dark": relleno negro para superficies claras. "light": relleno blanco para bandas oscuras. */
-  variant?: "dark" | "light" | "outline-light";
+  /** "primary": relleno naranja. "ghost": borde naranja sin relleno. */
+  variant?: "primary" | "ghost";
   large?: boolean;
   className?: string;
 }
 
 const styles = {
-  dark: "bg-black text-white border-white hover:bg-[#222222] focus-visible:ring-black",
-  light: "bg-white text-black border-white hover:bg-[#f6f5f5] focus-visible:ring-white focus-visible:ring-offset-[#0b252a]",
-  "outline-light": "bg-transparent text-white border-white/60 hover:border-white hover:bg-white/10 focus-visible:ring-white focus-visible:ring-offset-[#0b252a]",
+  primary: "bg-[#f53900] text-[#fffafa] border-[#f53900] hover:bg-[#d93200] hover:border-[#d93200]",
+  ghost: "bg-transparent text-[#f53900] border-[#f53900] hover:bg-[#ffe0d6]",
 };
 
-export default function Btn({ href, children, variant = "dark", large, className = "" }: BtnProps) {
+export default function Btn({ href, children, variant = "primary", large, className = "" }: BtnProps) {
   return (
     <a
       href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-full border font-medium tracking-[-0.02em] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${large ? "text-lg px-8 py-4" : "text-base px-6 py-3"} ${styles[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 rounded-[4px] border font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#f53900] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fffafa] ${large ? "text-lg px-8 py-4" : "text-base px-6 py-3"} ${styles[variant]} ${className}`}
     >
       {children}
     </a>

@@ -1,15 +1,15 @@
 export default function MockupFactura() {
   return (
-    <div className="rounded-lg overflow-hidden border border-black/10 text-xs" style={{ background: "#fff", fontFamily: "inherit", letterSpacing: "normal" }}>
+    <div className="rounded-lg overflow-hidden border border-[#e5e5e5] text-xs" style={{ background: "#fff", fontFamily: "inherit", letterSpacing: "normal" }}>
       {/* Header */}
-      <div className="flex items-start justify-between p-5" style={{ background: "#0b252a" }}>
+      <div className="flex items-start justify-between p-5" style={{ background: "#1a1616" }}>
         <div>
-          <div className="w-24 h-5 rounded-sm mb-1" style={{ background: "#406e7a" }} />
+          <div className="w-24 h-5 rounded-sm mb-1" style={{ background: "#f53900" }} />
           <div className="text-[10px]" style={{ color: "#9AA0AB" }}>Empresa de Obras S.L.</div>
           <div className="text-[10px]" style={{ color: "#9AA0AB" }}>NIF: B-00000000</div>
         </div>
         <div className="text-right">
-          <div className="font-bold text-base" style={{ color: "#406e7a", fontFamily: "var(--font-serif), serif", letterSpacing: "0.05em" }}>FACTURA</div>
+          <div className="font-bold text-base" style={{ color: "#f53900", letterSpacing: "0.05em" }}>FACTURA</div>
           <div style={{ color: "#9AA0AB", fontSize: "10px" }}>Nº 2024-0042</div>
           <div style={{ color: "#9AA0AB", fontSize: "10px" }}>15 / 01 / 2025</div>
         </div>
@@ -19,12 +19,12 @@ export default function MockupFactura() {
       <div className="px-5 py-3 flex justify-between" style={{ borderBottom: "1px solid #eee" }}>
         <div>
           <div style={{ color: "#9AA0AB", fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Facturado a</div>
-          <div className="font-semibold mt-0.5" style={{ color: "#0b252a" }}>Comunidad Escalera A-3</div>
+          <div className="font-semibold mt-0.5" style={{ color: "#1a1616" }}>Comunidad Escalera A-3</div>
           <div style={{ color: "#9AA0AB" }}>C/ Major 14, Barcelona</div>
         </div>
         <div className="text-right">
           <div style={{ color: "#9AA0AB", fontSize: "9px", textTransform: "uppercase", letterSpacing: "0.08em" }}>Vencimiento</div>
-          <div className="font-semibold mt-0.5" style={{ color: "#0b252a" }}>15 / 02 / 2025</div>
+          <div className="font-semibold mt-0.5" style={{ color: "#1a1616" }}>15 / 02 / 2025</div>
         </div>
       </div>
 
@@ -44,10 +44,10 @@ export default function MockupFactura() {
             ["Revisión BIE + señalización", "1", "95,00 €", "95,00 €"],
           ].map(([d, u, p, t], i) => (
             <tr key={i} style={{ borderBottom: "1px solid #f0f0f0" }}>
-              <td className="px-5 py-2" style={{ color: "#0b252a" }}>{d}</td>
+              <td className="px-5 py-2" style={{ color: "#1a1616" }}>{d}</td>
               <td className="px-5 py-2" style={{ color: "#4A4F5A" }}>{u}</td>
               <td className="px-5 py-2" style={{ color: "#4A4F5A", fontVariantNumeric: "tabular-nums" }}>{p}</td>
-              <td className="px-5 py-2 font-semibold" style={{ color: "#0b252a", fontVariantNumeric: "tabular-nums" }}>{t}</td>
+              <td className="px-5 py-2 font-semibold" style={{ color: "#1a1616", fontVariantNumeric: "tabular-nums" }}>{t}</td>
             </tr>
           ))}
         </tbody>
@@ -61,7 +61,7 @@ export default function MockupFactura() {
               <span>{k}</span><span style={{ fontVariantNumeric: "tabular-nums" }}>{v}</span>
             </div>
           ))}
-          <div className="flex justify-between pt-2 mt-2 font-bold" style={{ borderTop: "2px solid #406e7a", color: "#0b252a", fontSize: "13px" }}>
+          <div className="flex justify-between pt-2 mt-2 font-bold" style={{ borderTop: "2px solid #f53900", color: "#1a1616", fontSize: "13px" }}>
             <span>TOTAL</span><span style={{ fontVariantNumeric: "tabular-nums" }}>850,63 €</span>
           </div>
         </div>
